@@ -13,9 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
     <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Konfigurasi Tema Tailwind -->
     <script>
@@ -37,129 +35,49 @@
     </script>
 
     <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            box-sizing: border-box;
-        }
-
-        .doc-shadow {
-            box-shadow: 0 25px 80px -12px rgba(15, 23, 42, 0.15), 0 4px 25px -5px rgba(15, 23, 42, 0.08);
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-up {
-            animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        }
-
-        /* Latar belakang pattern biru sangat muda */
-        .pattern-bg {
-            background-image: radial-gradient(circle at 2px 2px, rgba(14, 165, 233, 0.08) 1px, transparent 0);
-            background-size: 24px 24px;
-        }
-
-        /* Pita atas merah merona */
-        .ribbon {
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-        }
-
-        .search-glow:focus {
-            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2), 0 0 20px rgba(14, 165, 233, 0.1);
-        }
-
-        .result-card {
-            animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-        }
-
-        .stamp {
-            border: 4px solid #16a34a;
-            border-radius: 12px;
-            padding: 6px 18px;
-            transform: rotate(-5deg);
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
+        html, body { height: 100%; margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; box-sizing: border-box; }
+        .doc-shadow { box-shadow: 0 25px 80px -12px rgba(15, 23, 42, 0.15), 0 4px 25px -5px rgba(15, 23, 42, 0.08); }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-up { animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .pattern-bg { background-image: radial-gradient(circle at 2px 2px, rgba(14, 165, 233, 0.08) 1px, transparent 0); background-size: 24px 24px; }
+        .ribbon { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); }
+        .search-glow:focus { box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.2), 0 0 20px rgba(14, 165, 233, 0.1); }
+        .result-card { animation: fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+        .stamp { border: 4px solid #16a34a; border-radius: 12px; padding: 6px 18px; transform: rotate(-5deg); font-weight: 900; letter-spacing: 2px; }
     </style>
 </head>
 
 <body class="h-full overflow-auto bg-gradient-to-br from-schoolBlue-50 via-white to-schoolBlue-50 pattern-bg">
     <div class="w-full min-h-full flex flex-col items-center justify-start px-4 py-8 md:py-12">
 
-        <!-- Document Container -->
         <div class="w-full max-w-3xl bg-white doc-shadow rounded-2xl overflow-hidden fade-up">
-
-            <!-- Top Ribbon (Merah) -->
             <div class="ribbon h-2 w-full"></div>
-            <!-- Accent Line (Biru) -->
             <div class="h-1 w-full bg-gradient-to-r from-schoolBlue-700 via-schoolBlue-500 to-schoolBlue-700"></div>
 
-            <!-- Header Section -->
             <header class="px-6 md:px-12 pt-8 pb-6 text-center border-b border-schoolDark-500/10">
-
-                <!-- Logo -->
                 <div class="flex justify-center mb-4">
-                    <img src="logo.png" alt="Logo SDN Pisangan Timur 01"
-                        class="w-28 h-28 md:w-32 md:h-32 object-contain drop-shadow-xl"
-                        onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center text-sm text-gray-500\'>Logo Gagal Dimuat</div>'">
+                    <img src="logo.png" alt="Logo SDN Pisangan Timur 01" class="w-28 h-28 md:w-32 md:h-32 object-contain drop-shadow-xl" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center text-sm text-gray-500\'>Logo Gagal Dimuat</div>'">
                 </div>
-
-                <p class="text-xs md:text-sm text-schoolDark-700 font-semibold tracking-widest uppercase mb-1">
-                    Pemerintah Provinsi DKI Jakarta
-                </p>
-                <h1 class="font-display text-2xl md:text-3xl text-schoolDark-900 mb-1 font-bold">
-                    SDN Pisangan Timur 01
-                </h1>
-                <p class="text-xs text-schoolDark-500 mb-0">
-                    Jl. Pisangan Lama I/38, Kel. Pisangan Timur, Kec. Pulogadung, Kota Adm. Jakarta Timur
-                </p>
+                <p class="text-xs md:text-sm text-schoolDark-700 font-semibold tracking-widest uppercase mb-1">Pemerintah Provinsi DKI Jakarta</p>
+                <h1 class="font-display text-2xl md:text-3xl text-schoolDark-900 mb-1 font-bold">SDN Pisangan Timur 01</h1>
+                <p class="text-xs text-schoolDark-500 mb-0">Jl. Pisangan Lama I/38, Kel. Pisangan Timur, Kec. Pulogadung, Kota Adm. Jakarta Timur</p>
             </header>
 
-            <!-- ========================================== -->
-            <!-- VIEW 1: HALAMAN SAMBUTAN KEPALA SEKOLAH    -->
-            <!-- ========================================== -->
+            <!-- VIEW 1: SAMBUTAN -->
             <section id="view-sambutan" class="px-6 md:px-12 py-8 fade-up">
-                <div
-                    class="bg-schoolBlue-50/50 border border-schoolBlue-100 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden">
-                    <!-- Aksen Kutipan (Quote Icon) background -->
-                    <i data-lucide="quote"
-                        class="absolute -top-4 -left-4 w-24 h-24 text-schoolBlue-500/10 rotate-180"></i>
-
+                <div class="bg-schoolBlue-50/50 border border-schoolBlue-100 rounded-2xl p-6 md:p-8 text-center relative overflow-hidden">
+                    <i data-lucide="quote" class="absolute -top-4 -left-4 w-24 h-24 text-schoolBlue-500/10 rotate-180"></i>
                     <div class="relative z-10">
                         <h3 class="text-lg md:text-xl font-bold text-schoolDark-900 mb-4">Sambutan Kepala Sekolah</h3>
-
-                        <p
-                            class="text-sm md:text-base text-schoolDark-700 leading-relaxed italic mb-6 max-w-2xl mx-auto">
-                            "Anak-anakku yang Ibu Sayangi dan Ibu Banggakan,
-                            Enam tahun sudah kita merajut cerita, belajar, dan bertumbuh bersama di SDN Pisangan Timur
-                            01. Hari ini adalah gerbang awal menuju petualangan baru di jenjang yang lebih tinggi.
-                            <br><br>
-                            Apapun hasil yang tertulis hari ini, kalian tetaplah bintang kebanggaan kami. Teruslah
-                            melangkah dengan semangat, raihlah cita-cita setinggi mungkin, dan jangan pernah takut untuk
-                            bermimpi."
+                        <p class="text-sm md:text-base text-schoolDark-700 leading-relaxed italic mb-6 max-w-2xl mx-auto">
+                            "Anak-anakku yang Ibu Sayangi dan Ibu Banggakan, Enam tahun sudah kita merajut cerita, belajar, dan bertumbuh bersama di SDN Pisangan Timur 01. Hari ini adalah gerbang awal menuju petualangan baru di jenjang yang lebih tinggi.<br><br>
+                            Apapun hasil yang tertulis hari ini, kalian tetaplah bintang kebanggaan kami. Teruslah melangkah dengan semangat, raihlah cita-cita setinggi mungkin, dan jangan pernah takut untuk bermimpi."
                         </p>
-
-                        <!-- Nama Kepala Sekolah -->
-                       <div class="inline-block border-t-2 border-schoolRed-700 pt-3 mb-8">
-                        <p class="text-sm font-bold text-schoolDark-900">Anna Samosir S.Pd.SD.M.Si</p>
+                        <div class="inline-block border-t-2 border-schoolRed-700 pt-3 mb-8">
+                            <p class="text-sm font-bold text-schoolDark-900">Anna Samosir S.Pd.SD.M.Si</p>
                         </div>
-
-                        <!-- Tombol Lanjut (Warna Biru langsung terlihat) -->
                         <div class="text-center mt-4">
-                            <button onclick="bukaHalamanPencarian()"
-                                class="inline-flex items-center gap-2 bg-schoolBlue-600 hover:bg-schoolBlue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-transform hover:-translate-y-1 cursor-pointer">
+                            <button onclick="bukaHalamanPencarian()" class="inline-flex items-center gap-2 bg-schoolBlue-600 hover:bg-schoolBlue-700 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-transform hover:-translate-y-1 cursor-pointer">
                                 Lanjut Cek Kelulusan <i data-lucide="arrow-right" class="w-5 h-5"></i>
                             </button>
                         </div>
@@ -167,32 +85,30 @@
                 </div>
             </section>
 
-            <!-- ========================================== -->
-            <!-- VIEW 2: HALAMAN PENCARIAN                  -->
-            <!-- ========================================== -->
+            <!-- VIEW 2: PENCARIAN -->
             <div id="view-pencarian" class="hidden">
                 <div class="text-center mt-6">
                     <div class="inline-block px-5 py-2 bg-schoolRed-700 rounded-full shadow-md">
-                        <h2 class="text-sm md:text-base font-bold text-white tracking-wide">
-                            PENGUMUMAN KELULUSAN TAHUN 2026
-                        </h2>
+                        <h2 class="text-sm md:text-base font-bold text-white tracking-wide">PENGUMUMAN KELULUSAN TAHUN 2026</h2>
                     </div>
                 </div>
 
-                <!-- Search Section -->
                 <section class="px-6 md:px-12 py-6">
                     <div class="text-center mb-6">
                         <h3 class="text-lg md:text-xl font-bold text-schoolDark-900 mb-2">Verifikasi Data Siswa</h3>
-                        <p class="text-sm text-schoolDark-500">Masukkan Nomor Peserta atau Nama Lengkap Anda</p>
+                        <p class="text-sm text-schoolDark-500">Silakan masukkan 10 digit NISN Anda</p>
                     </div>
 
                     <form id="search-form" class="max-w-md mx-auto">
                         <div class="relative">
-                            <input type="text" id="search-input" placeholder="Ketik Nomor Peserta atau Nama..."
-                                class="w-full px-5 py-4 pr-14 bg-schoolBlue-50 border-2 border-schoolBlue-100 rounded-xl text-schoolDark-900 font-medium placeholder:text-schoolDark-500/50 focus:outline-none focus:border-schoolBlue-500 search-glow transition-all duration-300"
+                            <!-- Input dibatasi hanya angka (inputmode numeric & pattern) -->
+                            <input type="text" id="search-input" 
+                                placeholder="Ketik NISN (Contoh: 312...)"
+                                inputmode="numeric"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                                class="w-full px-5 py-4 pr-14 bg-schoolBlue-50 border-2 border-schoolBlue-100 rounded-xl text-schoolDark-900 font-bold placeholder:text-schoolDark-500/50 focus:outline-none focus:border-schoolBlue-500 search-glow transition-all duration-300"
                                 autocomplete="off">
-                            <button type="submit"
-                                class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-schoolBlue-500 hover:bg-schoolBlue-700 rounded-lg flex items-center justify-center transition-colors shadow-sm cursor-pointer">
+                            <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-schoolBlue-500 hover:bg-schoolBlue-700 rounded-lg flex items-center justify-center transition-colors shadow-sm cursor-pointer">
                                 <i data-lucide="search" class="w-5 h-5 text-white"></i>
                             </button>
                         </div>
@@ -200,7 +116,6 @@
                     </form>
                 </section>
 
-                <!-- Result Section -->
                 <!-- Efek Loading -->
                 <div id="loading-state" class="hidden py-12 text-center">
                     <div class="inline-block w-12 h-12 border-4 border-schoolBlue-200 border-t-schoolBlue-600 rounded-full animate-spin mb-4"></div>
@@ -209,18 +124,14 @@
                 <section id="result-section" class="px-6 md:px-12 pb-10 hidden"></section>
             </div>
 
-            <!-- Footer -->
             <footer class="px-6 md:px-12 py-6 bg-gray-50 border-t border-gray-200 text-center">
-                <p class="text-xs text-schoolDark-500">Dokumen ini dikeluarkan secara resmi oleh SDN Pisangan Timur 01
-                </p>
+                <p class="text-xs text-schoolDark-500">Dokumen ini dikeluarkan secara resmi oleh SDN Pisangan Timur 01</p>
                 <p class="text-xs text-schoolDark-500/60 mt-1">© 2026 — SDN Pisangan Timur 01</p>
             </footer>
         </div>
     </div>
 
     <script>
-        // Data Siswa Asli Kelas VI SDN Pisangan Timur 01
-        // Semua status diatur menjadi "lulus"
         const students = [
             { no: "001", nisn: "3121913751", nama: "ABI PUTRA PRAKASA", status: "lulus" },
             { no: "002", nisn: "3139620114", nama: "ABIDZAR BILAL GUNAWAN", status: "lulus" },
@@ -256,14 +167,11 @@
             { no: "032", nisn: "0137095045", nama: "ZIDAN ALFARO", status: "lulus" }
         ];
 
-        // Transisi Halaman
         function bukaHalamanPencarian() {
             const viewSambutan = document.getElementById('view-sambutan');
             const viewPencarian = document.getElementById('view-pencarian');
-
             viewSambutan.style.opacity = '0';
             viewSambutan.style.transition = 'opacity 0.4s ease';
-
             setTimeout(() => {
                 viewSambutan.classList.add('hidden');
                 viewPencarian.classList.remove('hidden');
@@ -272,7 +180,6 @@
             }, 400);
         }
 
-        // Logika Pencarian
         const form = document.getElementById('search-form');
         const input = document.getElementById('search-input');
         const errorMsg = document.getElementById('error-msg');
@@ -280,61 +187,46 @@
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            const query = input.value.trim().toLowerCase();
+            const query = input.value.trim();
 
             if (!query) {
-                showError("Silakan masukkan Nomor Urut, NISN, atau Nama Lengkap.");
+                showError("Silakan masukkan NISN Anda.");
                 return;
             }
 
-            const result = students.find(s =>
-                s.no === query || s.nisn === query || s.nama.toLowerCase().includes(query)
-            );
+            // PENCARIAN HANYA BERDASARKAN NISN
+            const result = students.find(s => s.nisn === query);
 
             if (!result) {
-                showError("Data tidak ditemukan. Pastikan data yang dimasukkan benar.");
+                showError("NISN tidak ditemukan. Pastikan nomor benar.");
                 resultSection.classList.add('hidden');
                 return;
             }
 
-            // --- PROSES LOADING DIMULAI ---
             hideError();
-            resultSection.classList.add('hidden'); // Sembunyikan hasil lama jika ada
+            resultSection.classList.add('hidden');
             const loadingState = document.getElementById('loading-state');
-            loadingState.classList.remove('hidden'); // Tampilkan loading
+            loadingState.classList.remove('hidden');
 
-            // Simulasi waktu tunggu selama 2 detik agar terkesan sedang mencari data
             setTimeout(() => {
-                loadingState.classList.add('hidden'); // Sembunyikan loading
-                showResult(result); // Baru tampilkan hasil seperti di screenshot
+                loadingState.classList.add('hidden');
+                showResult(result);
             }, 2000);
         });
 
-        function showError(msg) {
-            errorMsg.textContent = msg;
-            errorMsg.classList.remove('hidden');
-        }
-
-        function hideError() {
-            errorMsg.classList.add('hidden');
-        }
+        function showError(msg) { errorMsg.textContent = msg; errorMsg.classList.remove('hidden'); }
+        function hideError() { errorMsg.classList.add('hidden'); }
 
         function showResult(student) {
             const isLulus = student.status === "lulus";
-
-            // Baris tabel Kelas dihapus agar tampil lebih bersih
             resultSection.innerHTML = `
                 <div class="result-card rounded-xl overflow-hidden border-2 ${isLulus ? 'border-green-200 bg-gradient-to-br from-green-50 to-emerald-50' : 'border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50'}">
-                    
-                    <!-- Status Header -->
                     <div class="px-6 py-4 ${isLulus ? 'bg-green-600' : 'bg-orange-500'} text-center">
                         <div class="flex items-center justify-center gap-2">
                             <i data-lucide="${isLulus ? 'award' : 'alert-circle'}" class="w-6 h-6 text-white"></i>
                             <h4 class="text-lg font-bold text-white">${isLulus ? 'SELAMAT! ANDA DINYATAKAN LULUS' : 'BELUM MEMENUHI KRITERIA KELULUSAN'}</h4>
                         </div>
                     </div>
-
-                    <!-- Student Details -->
                     <div class="p-6">
                         <table class="w-full text-sm mb-5">
                             <tr class="border-b border-gray-200">
@@ -354,7 +246,6 @@
                                 <td class="py-2.5">: <span class="inline-block px-3 py-1 rounded-full text-xs font-bold ${isLulus ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'}">${isLulus ? 'LULUS' : 'TIDAK LULUS'}</span></td>
                             </tr>
                         </table>
-
                         ${isLulus ? `
                             <div class="flex items-center justify-between bg-white rounded-lg p-4 border border-green-200">
                                 <div>
@@ -363,34 +254,18 @@
                                 </div>
                                 <div class="stamp text-green-600 text-xs hidden md:block">LULUS</div>
                             </div>
-                            <p class="mt-4 text-center text-sm text-schoolDark-500">🎓 Selamat atas kelulusanmu! Semoga sukses di jenjang pendidikan berikutnya.</p>
-                        ` : `
-                            <div class="bg-white rounded-lg p-4 border border-orange-200">
-                                <p class="text-sm text-schoolDark-900 mb-2"><strong>Informasi Penting:</strong></p>
-                                <p class="text-sm text-schoolDark-700">Siswa yang bersangkutan belum memenuhi kriteria kelulusan yang ditetapkan. Silakan menghubungi <strong>Wali Kelas</strong> atau <strong>Pihak Sekolah</strong> untuk informasi lebih lanjut.</p>
-                            </div>
-                        `}
+                        ` : ''}
                     </div>
                 </div>
             `;
-
             resultSection.classList.remove('hidden');
             lucide.createIcons();
-
             if (isLulus) {
-                setTimeout(() => {
-                    // Warna confetti disesuaikan dengan logo (Merah, Biru, Hijau, Kuning)
-                    const schoolColors = ['#ef4444', '#0ea5e9', '#16a34a', '#fcd34d', '#ffffff'];
-                    confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 }, colors: schoolColors });
-                    setTimeout(() => confetti({ particleCount: 80, spread: 100, origin: { x: 0.2, y: 0.5 }, colors: schoolColors }), 300);
-                    setTimeout(() => confetti({ particleCount: 80, spread: 100, origin: { x: 0.8, y: 0.5 }, colors: schoolColors }), 600);
-                }, 400);
+                const schoolColors = ['#ef4444', '#0ea5e9', '#16a34a', '#fcd34d', '#ffffff'];
+                confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 }, colors: schoolColors });
             }
         }
-
-        // Inisialisasi ikon Lucide
         lucide.createIcons();
     </script>
 </body>
-
 </html>
