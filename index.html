@@ -201,6 +201,11 @@
                 </section>
 
                 <!-- Result Section -->
+                <!-- Efek Loading -->
+                <div id="loading-state" class="hidden py-12 text-center">
+                    <div class="inline-block w-12 h-12 border-4 border-schoolBlue-200 border-t-schoolBlue-600 rounded-full animate-spin mb-4"></div>
+                    <p class="text-schoolDark-500 font-medium animate-pulse">Sedang memverifikasi data kelulusan...</p>
+                </div>
                 <section id="result-section" class="px-6 md:px-12 pb-10 hidden"></section>
             </div>
 
@@ -282,7 +287,6 @@
                 return;
             }
 
-            // Mencari berdasarkan nomor peserta, NISN, atau Nama
             const result = students.find(s =>
                 s.no === query || s.nisn === query || s.nama.toLowerCase().includes(query)
             );
@@ -293,8 +297,17 @@
                 return;
             }
 
+            // --- PROSES LOADING DIMULAI ---
             hideError();
-            showResult(result);
+            resultSection.classList.add('hidden'); // Sembunyikan hasil lama jika ada
+            const loadingState = document.getElementById('loading-state');
+            loadingState.classList.remove('hidden'); // Tampilkan loading
+
+            // Simulasi waktu tunggu selama 2 detik agar terkesan sedang mencari data
+            setTimeout(() => {
+                loadingState.classList.add('hidden'); // Sembunyikan loading
+                showResult(result); // Baru tampilkan hasil seperti di screenshot
+            }, 2000);
         });
 
         function showError(msg) {
